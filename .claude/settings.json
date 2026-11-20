@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./**/*.pem)",
+      "Read(./**/*.key)",
+      "Read(./**/*serviceAccount*.json)",
+      "Read(./**/*firebase-adminsdk*.json)",
+      "Read(~/**)",
+      "Bash(cat .env*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)"
+    ],
+    "ask": [
+      "Bash(git push:*)",
+      "Bash(vercel:*)",
+      "Bash(npm publish:*)"
+    ]
+  }
+}
