@@ -48,3 +48,9 @@ export async function borrar(uid: string, id: string): Promise<boolean> {
     return true;
   });
 }
+
+// Series que el usuario ya decidió (cualquier estado, sin borrar).
+export async function idsDecididas(uid: string): Promise<Set<number>> {
+  const snap = await coleccion(uid).where('deleted_at', '==', null).select().get();
+  return new Set(snap.docs.map((d) => Number(d.id)));
+}
